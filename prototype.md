@@ -12,7 +12,7 @@ ECMA6표준에서 Claa 문법이 추가되긴 했지만 문법이 추가됐다�
 ### 프로토타입 기반 생성
 모든 객체는 프로토타입을 기반으로 하며 프로토타입은 객체에 기본적인 프로퍼티 집합을 부여한다  
 프로토타입은 Object 생성자와 연관돼 있으며, 따라서 모든 객체에서 공유한다
-```
+```js
 function Rabbit (adjective) {
   this.adjective = adjective;
   this.speak = function (line) {
