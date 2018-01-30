@@ -1,6 +1,5 @@
-# 팩토리얼 (Factorial)
+## Factorial
 
-## 문제
 ```
 In mathematics, the factorial of a non-negative integer n, denoted by n!,
  is the product of all positive integers less than or equal to n. 
@@ -11,7 +10,7 @@ If input is below 0 or above 12 throw an exception of type ArgumentOutOfRangeExc
 or IllegalArgumentException (Java) or RangeException (PHP) or throw a RangeError (JavaScript).
 ```
 
-### 나의 풀이
+### My solution
 ```js
 function factorial(n)
 {
