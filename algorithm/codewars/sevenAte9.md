@@ -28,6 +28,6 @@ function sevenAte9(str){
 }
 ```
 
-### Need
+### Needs
 Regualr Expression
 ### Comment
