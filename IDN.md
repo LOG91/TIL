@@ -8,7 +8,7 @@ forEach, reduce
 - 프로토타입
 - 고차 함수
 - 인터페이스
-- 프로토타입
+- 클로저
 
 ## ??
 - GoogleAPI
