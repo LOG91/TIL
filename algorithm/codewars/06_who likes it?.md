@@ -38,7 +38,7 @@ function likes(names) {
 }
 ```
 
-### Best practies
+### Best practices
 1. 
 ```js
 function likes(names) {

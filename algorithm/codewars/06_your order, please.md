@@ -31,7 +31,7 @@ function order(words){
 }
 ```
 
-### Best Practies
+### Best Practices
 ```js
 function order(words){
   
