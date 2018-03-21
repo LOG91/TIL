@@ -69,3 +69,13 @@ switch(name) {
 (name === 'whale') ? console.log('whale은 고래~') : (name === 'dolphin') ? console.log('dolphin은 돌고래~') : console.log('killerWhale은 범고래~');
 // 이런 식으로 n개까지 가능할 것으로 예상된다
 ```
+
+## 5. ==와 ===의 차이는 정확히 무엇인가?
+==는 자바스크립트 내부의 규정(?)을 따라 타입별로 알아서 형변환 후 비교한다  
+느슨한 같음(loose equality)라고도 한다  
+> 1 == '1'이 true를 반환한다
+
+이와 다르게 ===는 ==보다 엄격하게 타입까지 비교한다  
+엄격한 같음(strict equality)라고도 한다  
+> 1 === '1'이 false를 반환한다
+
