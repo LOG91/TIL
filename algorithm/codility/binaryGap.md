@@ -27,24 +27,22 @@ expected worst-case space complexity is O(1).
 // console.log('this is a debug message');
 
 function solution(N) {
-    // write your code in JavaScript (Node.js 8.9.4)
-    let binaryArray = [];
-    let gapArray = []
-    let count = 0;
-    while(N >= 1) {
-        if(N%2 ===0){
-            count++;        
-        } else {
-            gapArray.push(count);
-            count = 0;
-        }
-        
-        binaryArray.push(N%2);
-        N = Math.floor(N/2);
+  // write your code in JavaScript (Node.js 8.9.4)
+  let gapArray = [];
+  let count = 0;
+  let flag = false;
+  let maxGap = 0;
+  while (N >= 1) {
+    if (N % 2 === 0) {
+      if (flag) count += 1;
+    } else {
+      flag = true;
+      if (count > maxGap) maxGap = count;
+      count = 0;
     }
-    binaryArray.reverse();
-    let result = Math.max.apply(null, gapArray);
-    return result;
+    N = Math.floor(N / 2);
+  }
+  return maxGap;
 }
 ```
 ### Comment
