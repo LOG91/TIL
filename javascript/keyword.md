@@ -21,3 +21,28 @@
 이것을 1의 보수방법이라고 하고 2의 보수방법은 1의 보수에 1을 더하기만 하면 된다  
 26의 2진수 값과 26의 2의 보수를 더하면 0이 나온다
 
+## 2. Hoisting
+>Hoist : 끌어 올리다
+
+호이스팅(Hoisting)은 코드 아래에서 변수가 선언되었지만 마치 위에서 선언된 것처럼  
+코드 아래의 변수의 선언만 끌어올려서 사용하는 효과를 말한다  
+예를 들어 보겠다
+```js
+console.log(str); // 에러가 나지 않고 undefined가 뜬다 아래의 var str;만 호이스팅된 것이다
+var str = 'whale';
+```
+함수도 변수이기에 호이스팅된다  
+아래와 같이 함수 선언식으로 선언한다면 통째로 위로 호이스팅되고  
+표현식으로 한다면 호이스팅되지 않기에 에러가 난다
+```js
+showName('log91'); // log91
+showName2('whale'); // showName2 is not a function
+function showName(name) {
+  console.log(name);
+};
+var showName2 = function(name) {
+  console.log(name);
+};
+```
+
+
