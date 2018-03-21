@@ -45,4 +45,27 @@ var showName2 = function(name) {
 };
 ```
 
+## 3. !!
+!는 부정을 의미한다  
+예를 들어 !true는 false !false는 true이고  
+0은 false값이기에 !0은 true를 나타낸다  
+!!는 결국 이중부정을 의미하는데 무슨 의미가 있을까 싶지만  
+어느샌가 논리타입 boolean으로 바뀐 것을 발견할 수 있을 것이다
 
+## 4. 3개 이상의 switch문을 어떻게 3항연산자로 대체할까? (코드예시)
+```js
+switch(name) {
+  case whale : 
+      console.log('whale은 고래~');
+      break;
+  case dolphin :
+      console.log('dolphin은 돌고래~');
+      break;
+  case killerWhale :
+      console.log('killerWhale은 범고래~');
+      break;
+}
+// 아래는 3항 연산자로 대체한 식
+(name === 'whale') ? console.log('whale은 고래~') : (name === 'dolphin') ? console.log('dolphin은 돌고래~') : console.log('killerWhale은 범고래~');
+// 이런 식으로 n개까지 가능할 것으로 예상된다
+```
