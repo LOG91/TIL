@@ -92,3 +92,40 @@ function test(e) {
         ...(중략)
     }
 ```
+
+## 7. eval은 무엇인가?
+문자로 표현된 javascript코드를 실행하는 함수다  
+```
+eval('1 + 2') // 3을 반환한다.
+eval('if(true)console.log("Happy coding")'); // Happy Coding을 반환한다.
+
+// 아래와 같이string이 아닌 객체값으로 받아주면 그대로를 반환한다
+eval(new String("2 + 2")); // "2 + 2" 반환
+```
+마지막 표현식이 반환된다
+```
+eval('x = 123'); // 123를 반환
+eval('x = 123, y =242'); // 242를 반환
+eval('x = 123, y =242, z = 124'); // 124를 반환
+
+// 조건식을 사용할 때
+var str = "if ( a ) { 1+1; } else { 1+2; }";
+var a = true;
+var b = eval(str);  // 2를 반환
+
+console.log("b is : " + b);
+
+a = false;
+b = eval(str);  // 3을 반환
+
+console.log("b is : " + b);
+
+// 아래와 같이 사용할 수도 있다
+var dateFn = "Date(1991,8,13)";
+var myBirth;
+eval("myBirth = new " + dateFn + ";");
+
+document.write(myBirth);
+```
+자바스크립트 코드 최적화의 측면에서 eval()함수는 자제수준이라고 한다 바로 실행시키는 것이 보안상 위험하다고 한다!
+
