@@ -129,3 +129,12 @@ document.write(myBirth);
 ```
 자바스크립트 코드 최적화의 측면에서 eval()함수는 자제수준이라고 한다 바로 실행시키는 것이 보안상 위험하다고 한다!
 
+## 8. 변수값을 출력할때 null, undefined, is not defined으로 출력되는 차이점은 무엇인가?
+1. __null__  
+null은 내가 임의로 var a = null 이런식으로 지정해줘야 나오는 값  
+2. __undefined__  
+변수는 선언되었는데 아무 값도 초기화되어있지 않을 때 나오는 값  
+3. __is not defined__  
+해당 변수가 아예 선언되지 않았을 때 나오는 값  
+
+## 9. Function.prototype.bind 에 대해서 설명하기
