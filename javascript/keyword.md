@@ -138,3 +138,29 @@ null은 내가 임의로 var a = null 이런식으로 지정해줘야 나오는 
 해당 변수가 아예 선언되지 않았을 때 나오는 값  
 
 ## 9. Function.prototype.bind 에 대해서 설명하기
+bind는 쉽게 말하면 함수와 객체를 묶어주는 역할을 한다고 볼 수 있다  
+```js
+function hi() {
+    return 'Hi, ' + this.name;
+}
+const obj = {name : 'ES6'};
+hi(); // 이렇게 하면 name값이 없는 hi함수는 Hi, 까지만 출력한다
+
+hi.bind(obj); // bind를 이용한다면 Hello ES6를 출력한다
+
+// 아래는 mdn에 나와있는 예제다
+this.x = 9;
+var module = {
+  x: 81,
+  getX: function() { return this.x; }
+};
+
+module.getX(); // 81
+
+var retrieveX = module.getX;
+retrieveX();
+
+var boundGetX = retrieveX.bind(module);
+boundGetX(); // 81
+```
+
