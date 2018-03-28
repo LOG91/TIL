@@ -164,3 +164,24 @@ var boundGetX = retrieveX.bind(module);
 boundGetX(); // 81
 ```
 
+## 10. this가 가리키는 것은 언제 결정되는가
+일반적으로 this는 객체의 프로퍼티인 함수에서 의미가 있다.  
+메서드를 호출하면 this는 호출한 메서드를 소유하는 객체가 된다.  
+this는 함수를 어떻게 선언했느냐가 아니라 어떻게 호출했느냐에 따라  
+달라진 다는 것을 이해해야 한다.  
+```js
+const o = {
+    name : 'Wallace',
+    speak() {return `My name is `+ this.name}
+}
+
+o.speak(); // Wallace를 호출
+
+const speak = o.speak;
+speak === o.speak; // true 같은 함수를 가리킨다
+speak() //My name is undefined 호출
+```
+위 식에서 speak가 호출될 때 어디에서 호출됐느냐가 this가 무엇을 가리키는지가 결정되는 것이다  
+  
+  결론적으로 this는 함수가 호출되는 지점의 객체를 참조하다고 볼 수 있다  
+  
