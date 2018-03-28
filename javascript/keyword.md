@@ -182,6 +182,26 @@ speak === o.speak; // true 같은 함수를 가리킨다
 speak() //My name is undefined 호출
 ```
 위 식에서 speak가 호출될 때 어디에서 호출됐느냐가 this가 무엇을 가리키는지가 결정되는 것이다  
-  
   결론적으로 this는 함수가 호출되는 지점의 객체를 참조하다고 볼 수 있다  
   
+## 11. call과 apply의 차이점은?
+원래 함수는 선언한 후에 호출해야 하고 함수 뒤에 ()를 붙여서 호출하지만  
+다른 두 가지 방법, 여기에 call 과 apply써서 호출할 수 있는 방법도 있다  
+역시 이름만 다른 것이 아니고 그냥 ()와는 다른 기능이 있다 아래 예를 들겠다  
+```js
+var obj = {
+  name: 'whale',
+  callName: function() {
+    console.log(this.name);
+  }
+};
+var obj2 = {
+  name: 'log91'
+};
+obj.callName(); // whale 호출
+obj.callName.call(obj2); // log91호출
+```
+위의 예처럼 call을 써서 인자에 객체를 넣어줄 때에  
+그 객체의 프로퍼티를 참조해서 사용한다  
+call 과 apply의 차이는 call은 매개변수를 그대로 나열하지만  
+apply는 배열로 만들어서 넣어줘야 한다
