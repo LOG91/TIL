@@ -205,3 +205,14 @@ obj.callName.call(obj2); // log91호출
 그 객체의 프로퍼티를 참조해서 사용한다  
 call 과 apply의 차이는 call은 매개변수를 그대로 나열하지만  
 apply는 배열로 만들어서 넣어줘야 한다
+
+## 12. add(10)(2) //12 가 되도록 구현해보기
+```js
+function add(v1) {
+  function add2(v2) {
+    return v1 + v2
+  }
+  return add2
+}
+console.log(add(10)(2)); // 12
+```
