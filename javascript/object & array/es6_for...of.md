@@ -1,5 +1,7 @@
-## for ... of
-for...of문은 반복가능한 객체 (Array, Map, Set, String, TypedArray, arguments 객체 등을 포함)에 대해서 반복하고 각 개별 속성값에 대해 실행되는 문이 있는 사용자 정의 반복 후크를 호출하는 루프를 생성합니다.
+# for ... of
+for...of문은 반복가능한 객체 (Array, Map, Set, String,  
+TypedArray, arguments 객체 등을 포함)에 대해서 반복하고  
+각 개별 속성값에 대해 실행되는 문이 있는 사용자 정의 반복 후크를 호출하는 루프를 생성합니다.
 
 > for...of 구문은 컬렉션 전용입니다, 모든 객체보다는. [Symbol.iterator] 속성이 있는 모든 컬렉션 요소에 대해 이 방식으로 반복합니다. __from MDN__
 ### for, forEach, for...in
