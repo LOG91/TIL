@@ -6,6 +6,7 @@
 - Recursion (재귀)
 - Abstract (추상화)
 - Higher-order Function (고차 함수)
+- Execution Context (실행 컨텍스트)
 
 ### CS
 - Regular Expression (정규표현식)
