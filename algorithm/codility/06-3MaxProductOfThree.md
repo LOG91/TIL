@@ -62,7 +62,35 @@ function solution(A) {
     }
 }
 ```
+## Other solution
+```js
+function solution(A) {
+    // write your code in JavaScript (Node.js 8.9.4)
+    const B = A.sort((a,b)=>a-b).slice();
+    return Math.max(B.shift()*B.shift()*B.pop(), A.pop()*A.pop()*A.pop());
+}
+```
+```js
+function solution(A) {
+    A = A.sort((a,b)=>a-b);
+    const lastIdx = A.length-1
+    const tripletsA = A[lastIdx]*A[lastIdx-1]*A[lastIdx-2]
+    let tripletsB;
+    if(A[0]<0&&A[1]<0) tripletsB = A[0]*A[1]*A[lastIdx]
+    const tripletsMax = tripletsB ? Math.max(tripletsA, tripletsB) : tripletsA
+    return tripletsMax
+}
+```
+```js
+function solution(A) {
+  A.sort((a, b) => a - b);
+  const first3 = A[0] * A[1] * A.slice(-1);
+  const last3 = A.slice(-3).reduce((acc, n) => acc * n);
 
+  return first3 < last3 ? last3 : first3;
+}
+```
 ## Comment
 - 풀긴 풀었지만 억지 끼워넣기 식이 조금 많은 것 같다  
 스터디에서 배울 때 많이 배워야겠다
+- 두 경우의 수를 추출하고 거기서 Math.max()를 사용한다는 것이 나에게 새로운 사고인 것 같다
