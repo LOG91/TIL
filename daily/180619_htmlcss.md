@@ -1,6 +1,6 @@
 # 180619 TIL (HTML, CSS)
 
-###HTML (HyperText Markup Language)
+### HTML (HyperText Markup Language)
 
 #### 레이아웃을 위한 태그
 
