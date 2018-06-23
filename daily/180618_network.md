@@ -1,8 +1,8 @@
-#180618 TIL (Network)
+# 180618 TIL (Network)
 
 HTTP & URI 공부 (웹지탱 책 + 구글링)
 
-##URI (Uniform Resource Identifier)
+## URI (Uniform Resource Identifier)
 
 URI란 리소스를 통일적으로 식별하는 ID를 말한다
 
@@ -89,7 +89,7 @@ URN(Uniform Resource Name)은 URL의 문제점에 대응해 도메인명과는 �
 
 
 
-###URI의 설계
+### URI의 설계
 
 **Cool URI**
 
@@ -169,7 +169,7 @@ TCP/IP의 IP가 여기에 해당, 데이터의 기본 통신 단위는 패킷
 
 
 
-####HTTP 메세지의 구조
+#### HTTP 메세지의 구조
 
 스타트라인 (start line)
 
@@ -181,7 +181,7 @@ TCP/IP의 IP가 여기에 해당, 데이터의 기본 통신 단위는 패킷
 
 
 
-####HTTP의 스테이트리스성
+#### HTTP의 스테이트리스성
 
 서버에서 클라이언트의 애플리케이션 상태를 보존하지 않는다는 것이다
 
@@ -211,13 +211,13 @@ HTTP를 심플하게 유지하기 때문에 비로소 브라우저는 PC뿐만 �
 
 
 
-###HTTP메서드
+### HTTP메서드
 
 #### 총 8개의 메서드
 
 너무 적어서 안좋을 것 같지만 HTTP가, 웹이 성공할 수 있었던 이유가 여기에 있다
 
-####GET
+#### GET
 
 지정한 URI의 정보를 가져온다
 
