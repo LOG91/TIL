@@ -38,4 +38,3 @@ template 모듈을 Temp라는 변수로 모듈화했는데 Temp는 프로그래�
   ```
 
 - **beforeEach가 꼭 필요한 것은 아니다 공통적으로 test함수에 앞서서 필요한 것들만 추출하는 것이고 가급적 given/when/then을 따라 test안에 상황을 정의해두는 것이 좋다!**
-
