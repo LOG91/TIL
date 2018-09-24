@@ -1,4 +1,4 @@
-# 180921 TIL (CSS - display, position)
+# 180921 TIL (CSS - display)
 
 Poiema web을 참고하여 작성하였음.
 
