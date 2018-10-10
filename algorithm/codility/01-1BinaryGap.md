@@ -22,6 +22,7 @@ expected worst-case time complexity is O(log(N));
 expected worst-case space complexity is O(1).
 
 ### My solution
+
 ```js
 // you can write to stdout for debugging purposes, e.g.
 // console.log('this is a debug message');
@@ -45,7 +46,28 @@ function solution(N) {
   return maxGap;
 }
 ```
+
+### Second
+
+```js
+function solution(N) {
+  // write your code in JavaScript (Node.js 8.9.4)
+  const binary = N.toString(2);
+  let countArray = 0;
+  let count = 0;
+  for (let v of binary) {
+    if (+v) {
+      if (count >= countArray) countArray = count;
+      count = 0;
+    }
+    if (!+v) count++;
+  }
+  return countArray;
+}
+```
+
 ### Comment
-Codility에서는 처음 풀어 봤는데 사이트가 더 깔끔하고 풀이 관련 정보들도 많이 나오긴 한다  
-근데 Best Practices가 없는 것 같아서 아쉽다 ㅠㅠ  
-__다시 알아보니 완전 성공이 아니고 20%의 버그가 발생했고 80%였다..!__
+
+Codility 에서는 처음 풀어 봤는데 사이트가 더 깔끔하고 풀이 관련 정보들도 많이 나오긴 한다  
+근데 Best Practices 가 없는 것 같아서 아쉽다 ㅠㅠ  
+**다시 알아보니 완전 성공이 아니고 20%의 버그가 발생했고 80%였다..!**
