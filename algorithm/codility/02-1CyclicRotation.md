@@ -53,6 +53,24 @@ function solution(A, K) {
     return A;
 }
 ```
+### My Solution 2
+```js
+function solution(A, K) {
+  // write your code in JavaScript (Node.js 8.9.4)
+  let number = K % A.length;
+  while (number > 0) {
+    const last = A.pop();
+    A.unshift(last);
+    number--;
+  }
+  return A;
+}
+```
 
 ### Comment
 코딩 안될 때 휴식이 필요한 것 같다 1시간을 해도 안되던게 나중에 하니 10분 안에 가능했다
+
+### Comment2
+- 예전 코드를 보니 가관이었다  
+- 예전에 비해서는 확실히 나아짐을 느낀다
+- 쉬운 것으로 다시 해보니 할만한다.......
