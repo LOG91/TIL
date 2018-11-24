@@ -39,5 +39,3 @@ service.min.js의 min이 minify를 거친 것이다
 
 ### Express
 
-## Unit Test(단위 테스트)
-
