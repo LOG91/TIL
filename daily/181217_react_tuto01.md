@@ -66,3 +66,34 @@ const MyName = ({ name }) => {
   return <div>안녕하세요! 제 이름은 {name} 입니다.</div>;
 };
 ```
+
+#### 동적인 데이터를 다루는 state
+state는 리액트의 핵심적인 기능 중 하나다
+이를 통하여 동적으로 변하는 데이터를 관리한다
+```js
+class ABC extends Component {
+  state{
+    number: 0;
+  }
+}
+```
+위와 같이 class field를 통하여 사용할 수 있다
+class field를 사용하지 않으면 아래와 같이 작성해야 한다
+```js
+class ABC extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      number=0;
+    }
+  }
+}
+```
+#### setState
+우리가 state를 통해 데이터를 다룰 때 꼭 지켜줘야 하는 부분은
+setState를 통해서 변화를 시켜줘야 한다는 것이다
+```js
+const {number} = this.state
+this.setState({number:number+1})
+```
+위와 같이 해줄 수 있다
