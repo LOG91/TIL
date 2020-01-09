@@ -1,4 +1,4 @@
-# React 기본강좌 (ZeroChoTV)
+# React 기본강좌3 (ZeroChoTV)
 
 ### 3-1 import require 비교
 
@@ -100,3 +100,26 @@ constructor(props) {
 this.onChangeDiv = this.onChangeDiv.bind(this);
 ```
 
+### 3-8 숫자야구 Hooks로 전환하기
+
+#### setState를 함수형으로 사용해야할 때!
+
+아래와 같은 상황이 있을 때 tries는 예전 state로 가져와야 한다
+
+지금에선 동작을 하지만 this.setState가 여러번 호출될 때 비동기의 특징으로 참조가 잘못되는
+
+경우가 있기 때문에 함수형을 이용하여 옛날 state를 사용해야 한다!
+
+```js
+this.setState({ tries: [...this.state.tries, {try: value }]});
+```
+
+```js
+this.setState(prevState => {
+	return {
+    tries: [...prevState.tries, {try: value}]
+  }
+})
+```
+
+위를 아래와 같이 바꿔주면 된다!
