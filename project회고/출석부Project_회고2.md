@@ -24,9 +24,9 @@
 
 ### ✔️api통신의 최소화
 
-componentDidMount와 shouldComponentUpdate의 코드를 만지는 도중에 나의
+Tab click에 따른 state의 변화를 다루던 중에 나의 큰 실수를 발견하게 되었다
 
-큰 실수를 발견하게 되었다
+그래서 아래와 같은 표정이 되었다
 
 ![alt text](https://upload.wikimedia.org/wikipedia/en/e/e0/Gollum.PNG)
 
@@ -45,7 +45,7 @@ state에서 꺼내오기만 하면 됐었는데 반복작업을 하고 있던 �
 하지만 이 생각마저 실수일 수 있겠지만 현재 내 판단은 통신을 줄이는 게 맞다는 것이었다
 
 ```js
-shouldComponenetUpdate() {
+handleClick() {
   fetch(`api/sheet/${blahblah}`).then(res=>res.json()).then(res={
     this.setState({ sheet: res }))
 }
@@ -53,3 +53,32 @@ shouldComponenetUpdate() {
 ```
 
 이런 식의 코드를 짜고 있었다
+
+
+
+오늘의 회고를 마무리하려는데 다시 아래 표정이 되었다
+
+![alt text](https://upload.wikimedia.org/wikipedia/en/e/e0/Gollum.PNG)
+
+그것은 shouldComponentUpdate에 state의 업데이트를 당당히 넣었고
+
+그것이 무한루프를 낳는다는 사실을 이제서야 깨닫고 지금껏 내가 이 실수를 하면서
+
+괜스레 리액트에게 짜증을 냈다는 사실을 알게 되었다
+
+shouldComponentUpdate는 state의 변화가 일어나 렌더링이 Update가 될 때 호출된다
+
+거기에 state의 변화 함수가 있다면 당연히....
+
+```
+SCU (shouldComponentUpdate): 이거 변화시켜야지
+리액트: SCU~~
+SCU: 넵 이거 변화시켜야지
+리액트: SCU~~
+SCU: 넵
+리액트: SCU~~
+SCU: 😇
+```
+
+
+
