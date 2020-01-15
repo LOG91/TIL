@@ -64,7 +64,7 @@ CreatRef는 Class Component의 ref를 Hooks의 ref 와 비슷하게
 조금 더 간략하게 선언할 수 있는 방식이다
 ```jsx
 inputRef;
-<input ref={c=> this.inputRef(c)}/>
+<input ref={c=> this.inputRef =c}/>
 위와 같은 방법을 아래와 같이 바꿀 수 있다
 
 import { createRef } from 'react';
