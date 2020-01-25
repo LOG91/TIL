@@ -31,6 +31,13 @@ render() {
 
 학원에서 js만 계속 공부할 때 많이 썼던 것이 생각이 났다
 
+그때 배운 것들을 다 까먹은 것 같았지만 다시 보니 기억도 나고 할맛도 나네..ㅎㅎ
+
+#### 변화는 일어나지만 렌더시키지 않고 싶은 것들은 state 외에 다른 변수로 선언!
+반응 속도체크 예제에서 시간초 계산은 변하는 값이지만 state에 담을 필요는 없다
+
+담게 되면 렌더링이 다시 일어나기 때문이다 ZeroCho님은 class의 this에 넣어주었다!
+
 #### Webpack 설정 devtool
 Webpack으로 번들링 후 디버깅을 하다보면 번들링이 된 상태로 코드의 에러 부분을
 
@@ -42,3 +49,47 @@ webpack.config.dev.js
 
 { devtoll: 'source-map' }
 ```
+
+### 4-4 반응속도체크 Hooks로 전환하기
+Hooks로 바꾸면서 class의 this를 이용해 선언했던 변수를 this를
+
+이용할 수 없게 되었다 그때 그 대신 useRef를 이용해서 한다
+
+Hooks에서 값이 바뀌어도 render를 호출하고 싶지 않은 변수들은 ref에 넣어서 사용한다
+
+한 가지 주의할 점은 아래와 같이 접근할 때 current에 접근을 해야 한다!
+
+```jsx
+const ResponseCheck = () => {
+  const timeout = useRef(null);
+  const startTime = useRef();
+  const endTime = useRef();
+
+
+  const fn = () => {
+   if(state === 'waiting') {
+      startTime.current = new Date();
+   } 
+  }
+}
+```
+#### return 내부에 if, for 쓰기
+jsx의 {}에는 for와 if사용이 불가능하고 3항 연산자 밖에 쓸 수 없다
+
+하지만 함수 안에는 for와 if를 쓸 수 있다는 방법과 즉시실행함수를 이용하면 아래와 같이 가능하다
+
+하지만 만만치 않게 지저분하기 때문에 이렇게 할 바에 함수로 빼는 편이 낫다!
+```jsx
+return (
+  <div>
+    {(()=> {
+      if(this.state.target.length>=0){
+        return <div>hello</div>
+      }else {
+        return null;
+      }
+    })()}
+  </div>
+)
+```
+
