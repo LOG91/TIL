@@ -64,3 +64,10 @@ switch case 문법에서 결과가 같을 경우에 아래와 같이
 multer가 FormData는 아래와 같이 처리한다
 파일 => req.files
 text => req.body
+
+### Post 요청시에 data에 빈 객체 넣어주기
+axios를 이용하여 post 요청을 보낼 때에는 넣어줄 데이터가 없더라도 빈 객체를 넣어서 보내야 한다!
+
+```js
+axios.post('/api/록퉁구', {}, { withCredentials: true });
+```
