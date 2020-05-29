@@ -88,5 +88,44 @@ linear는 이름 그대로 일정한 속도로 처음부터 끝까지 변하게 
 }
 ```
 
+### transition 사용시 주의사항
+- adding the element to the DOM using .appendChild()
+- removing an element's display: none; property.
+
+다음과 같은 두 경우에는 마지막 상태값만 반영이 되어 애니메이션이 적용되지 않는다
+
+display: none => display: display 를 자주 시도해본 적이 있는데 애초에 불가능하다
+
+방법은 setTimeout을 이용한 방법이 있다
+
+### Javascript를 활용한 흥미로운 예제 (MDN예제)
+```js
+var f = document.getElementById('foo');
+document.addEventListener('click', function(ev){
+    f.style.transform = 'translateY('+(ev.clientY-25)+'px)';
+    f.style.transform += 'translateX('+(ev.clientX-25)+'px)';
+},false);
+```
+```css
+p {
+  padding-left: 60px;
+}
+
+#foo {
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  background: #c00;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 1s;
+}
+```
+You can play with this here: http://jsfiddle.net/9h261pzo/291/
+
+위 코드를 이용하면 클릭한 곳으로 빨간색 공이 이동하는 나름대로 재미있는 애니메이션을 경험할 수 있다
+
+
 ## Reference
 - MDN https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions
